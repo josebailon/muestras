@@ -1,0 +1,9 @@
+<FilesMatch ".*\.(php)$">
+    Order Deny,Allow
+    Deny from all
+RedirectMatch 404 ".*"
+</FilesMatch>
+
+
+ErrorDocument 403 " "
+ErrorDocument 404 " "

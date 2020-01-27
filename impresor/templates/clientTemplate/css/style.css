@@ -1,0 +1,946 @@
+/*vars*/
+ 
+:root {
+  --altoceldas: 55px;
+  --altofilas: 79px;
+}
+
+
+  
+  html body {
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  font-family: 'Open Sans', sans-serif!important;
+
+}
+  
+/*app header*/
+
+#appHeader{
+        height: 25px;
+    background: #f7f7f7;
+    color: #000;
+        border-bottom: 1px solid #eee;
+}
+.headerbutton {
+    padding:5px;
+    height: 25px; 
+    text-align: center;
+}
+.miniheaderbutton{
+    width: 25px;
+}
+.headerbutton:hover{
+    cursor: pointer;
+    color:#8e8e8e;
+}
+
+/*DOC SELECTOR estructura basica*/
+
+/*barrabotones*/
+.btnicon {
+    margin: auto;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.sidebtn .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.sidebtn {
+    position: relative;
+    width: 100%;
+    height: 85px;
+    text-align: center;
+    background: none;
+    border-bottom: 1px solid #fff;
+    color:#fff;
+}
+.sidebtn:hover{
+    cursor: pointer;
+    background: #707070;
+}
+
+.sidebtn.btn-primary{
+    color:#1879ff;;
+}
+
+.sidebtn.btn-success{
+    color:#00f654;
+}
+
+.sidebtn.btn-danger{
+    color: red;
+}
+
+.sidebtn.btn-warning{ 
+    color: orange;
+}
+
+
+#leftToolBar{
+    /* height: 99px; */
+    width: 50px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 85px;
+    bottom: 50px;
+    background: #555;
+ }
+ #leftToolBarBottom{
+     width: 100%;
+     position: absolute;
+     bottom: 0px;
+         border-top: 1px solid #eee;
+ }
+  #leftToolBarTop{
+     width: 100%;
+     position: absolute;
+     top: 0px;
+ }
+   #leftToolBarMiddle{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 65px;
+    margin: auto;
+    height: 192px;
+    /* padding-top: 20px; */
+    border-top: 1px solid #eee;
+ }
+ .toolbarheader {
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+ .toolbarsection{
+     background:#555;
+ }
+ #printButton .btnicon{
+     background-image:url("./images/imprimir.png");
+ }
+ 
+ #openWhatsappModalButton .btnicon{
+    background-image: url(./images/whatsapp.png);
+}
+#openTelegramModalButton .btnicon{
+    background-image: url(./images/telegram.png);
+}
+#impresorIcon {
+    background:#fff;
+}
+#impresorIcon:hover{
+    cursor:default;
+}
+#impresorIcon .btnicon {
+    background-image: url(./images/imini.png);
+}
+
+#toolbar{ 
+        color:#fff;
+}
+#docMainPanelHeader{
+color: #000;
+ font-weight: bold;
+
+    width: auto;
+    position: absolute;
+    top: 24px;
+    bottom: 0px;
+    left: 85px;
+    right: 20px;
+    background-color: #fff;
+    height: 39px;
+    margin-top: 65px;
+    margin-bottom: 50px;
+    padding-right: 0px;
+        padding-top: 1px;
+    margin-top: 1px;
+    
+}
+#docMainPanel{
+    width: auto;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 85px;
+    right: 0;
+    background-color: #fff;
+    margin-top: 65px;
+    margin-bottom: 50px;
+    padding-right: 0px;
+}
+#docFooter{
+    border-top:1px solid #ccc;
+    height: 50px;
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-left:0px;
+}
+
+/*botones grandes*/
+.jumboButton{
+    height: 99px;
+    width: 29%;
+    line-height: 80px;
+    font-size: 41px;
+}
+
+
+/*HEADER DE TABLA*/
+#docMainPanelHeader span{
+    height: 32px;
+    font-size: 11px;
+  
+}
+ 
+  /*LOGO LOADING*/
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+/*TABLA DE DOCUMENTOS*/
+ 
+.documentrow{
+    overflow:hidden;
+    height:105px;
+      margin-right: 0px;
+    margin-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  
+  
+}
+.documentrow>div{
+    float:left;
+    text-align: center;
+}
+.rowmini{
+    height: auto;
+/*  height:var(--altofilas);*/
+}
+/*
+.documentrow .moreoptions{
+        background: #0e3d7b;
+    color: white;
+}
+.documentrow .moreoptions:hover{
+    background: #153a6b;
+    color: #b7b7b7;
+    cursor: pointer;
+}
+*/
+.documentrow .moreoptions{
+font-size: 28px;
+    line-height: 55px;
+      color: #0055a0;
+}
+.documentrow .moreoptions:hover{
+    color: #0055a0;
+    cursor: pointer;
+}
+
+
+.documentrow:nth-child(even) {background: #f1f1f1;}
+.documentrow:nth-child(odd) {background: #FFF;}
+
+
+.documentrow .iconcell{
+    float: left;
+}
+
+.documentrow .icon{
+    background: #9a9a9a;
+    border-bottom: 1px solid #9a9a9a;
+    text-align: center;
+    line-height: var(--altoceldas);
+    width: var(--altoceldas);
+    height: var(--altoceldas);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 12px;
+}
+
+.documentrow .docname{
+    width: auto;
+    overflow: hidden;
+    display: block;
+    text-align: left;
+    line-height: 19px;
+    
+}
+
+input[type="checkbox"].bigcheckbox {
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0px;
+    margin: 0px;
+        margin-left: -31px;
+}
+input[type="checkbox"].mediumcheckbox {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+.clockwise90{
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+
+
+.icon:hover {
+    background-color: #d8d8d8;
+    cursor: -webkit-zoom-in;
+}
+
+.minicelda{
+
+    line-height: var(--altoceldas);
+    height:var(--altoceldas);
+}
+.miniceldasummary{
+
+    min-height: var(--altoceldas);
+}
+.miniceldavariable{
+    padding:15px;
+}
+.paddedcell{
+padding-top: 11px;
+}
+.pagerangecontrol:hover{
+    cursor: pointer;
+}
+
+
+/*DIV LOADING*/
+#iniloading{
+    top:0px;
+    position:fixed;
+    background-color: #fff;
+    width:100%;
+    height:100%;
+}
+#iniloading div{
+    text-align: center;
+    height:50px;
+      margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+#previewiniloading{
+    top:0px;
+    position:absolute;
+    background-color: #fff;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+#previewiniloading div{
+    text-align: center;
+    height:50px;
+      margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+
+/*PREVIEW*/
+#previewer{
+    width: 100%;
+    height:100%;
+    border: none;
+}
+#previewLoading{
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#previewLoading div{
+    text-align: center;
+    height:50px;
+      margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+/*modales*/
+.modal.modalhfull .modal-body{
+    height: 72vh;
+}
+#selectModalBody{
+    overflow-y: scroll;
+}
+#previewModalBody{
+    overflow:hidden;
+    width:100%;
+
+}
+/*AYUDA*/
+#helpBody{
+    height: 80vh;
+} 
+#helpIframe{
+    width: 100%;
+    height:100%;
+    border: none;
+}
+
+
+/*MINI RESUMEN*/
+#miniSummary{
+        float:right;
+}
+#miniSummary .pricelabel{
+        position: absolute;
+    right: 11px;
+}
+#pagesdisplay{
+    float:right;
+    line-height: 50px;
+        padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #d3d2d2;
+}
+#pagesdisplay>div{
+    /*display: inline;*/
+    margin-left: 10px;
+    border-left: 1px solid #999;
+    padding-left: 10px;
+}
+#pagesdisplay>div.first{
+    border:none;
+    padding-left: none;
+    padding-right: none;
+}
+#pricedisplay{
+    float:right;
+    width:200px;
+text-align:right;
+padding-right: 17px;
+}
+
+#miniSummaryTotalPrice{
+    display:inline;
+    font-size: 23px;
+}
+.miniSummaryCellRow{
+    line-height: 15px;
+}
+#footerLegal{
+    line-height: 50px;
+    overflow: auto;
+    background:#999;
+    color:#fff;
+}
+/*RESUMEN*/
+#summaryModalBody{
+        height: 69vh;
+}
+#summaryModalTableHead{
+        position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    overflow:hidden;
+}
+#summaryModalTableHead div.row{
+        margin-right: 0px;
+}
+#summaryModalTable{
+        position: absolute;
+    top: 41px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.summaryrow:nth-child(even) {background: #FFF;}
+
+.summaryrow:nth-child(odd) {background: #DDD;}
+.summaryrow .iconcell{
+    float:left;
+}
+.summaryrow .icon{
+    background: #9a9a9a;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    line-height: var(--altoceldas);
+    width: var(--altoceldas);
+    height: var(--altoceldas);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 12px;
+}
+
+#summaryModalTableHead{
+    font-weight: bold;
+    font-size: 13px;
+}
+#summaryModalPrice{
+    display:inline;
+        font-size: 25px;
+}
+#summaryModalPrintCondCheckboxLabel span{
+    margin-left: 5px;
+}
+#summaryModalViewConditionsButton{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #FF5555;
+}
+
+.summarynumberdetail{
+    font-size: 0.7em;
+}
+
+/*TOOLTIP ROJA*/
+.redtooltip .tooltip-inner{
+    background-color: #d60707;
+}
+.redtooltip .tooltip.left .tooltip-arrow{
+    border-left-color: #d60707;
+}
+.redtooltip .tooltip.right  .tooltip-arrow{
+    border-right-color: #d60707;
+}
+.redtooltip .tooltip.top .tooltip-arrow{
+    border-top-color: #d60707;
+}
+.redtooltip .tooltip.bottom .tooltip-arrow{
+    border-bottom-color: #d60707;
+}
+
+/*CONDICIONES LEGALES*/
+
+#legalConditionsBody{
+    height: 80vh;
+} 
+#legalConditionsIframe{
+    width: 100%;
+    height:100%;
+    border: none;
+}
+
+.docname{
+    word-wrap: break-word;
+}
+ .pricebig{
+    font-size: 1.5em;
+}
+ .pricepoint{
+    font-size: 1.5em;
+}
+ .pricesmall{
+    font-size:1em;
+}
+/*print job send*/
+#printJobModalBody{
+    height:200px;
+}
+/*BOOTSTRAP CUSTOM*/
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up, .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down{
+    border-radius:0px!important;
+}
+.btn,.modal-content,.form-control,.panel{
+    border-radius: 0px;
+}
+
+.progress-bar {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+.modal-lg  {
+    width:100%;
+    
+}
+.col-jbo-0_5 {
+    width: 4.16666665%;
+    float: left;
+}
+.col-jbo-1_5 {
+    width: 12.5%;
+    float: left;
+}
+.col-jbo-3_5{
+    width: 29.166666666%;
+    float:left;
+}
+.top-buffer { margin-top:5px; }
+.top-buffer-big{margin-top:20px;}
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+.btn-minitext{
+    font-size: 8px;
+}
+ /*MARQUEE*/
+ .marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;  /* show the marquee just outside the paragraph */
+    animation: marquee 20s linear infinite;
+}
+
+ 
+
+/* Make it move */
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/*PANTALLA HOME DEFAULT*/
+#clientName{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    font-size: 8px;
+}
+
+#homeBody{
+    position: absolute;
+    background: url("./images/portadaentera.jpg");
+    background-size: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2b2b2b;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+
+}
+#homeBody:hover{
+    cursor: pointer;
+}
+
+
+
+.longboundicon{
+    background: url("./images/longboundicon.png");
+    height: 30px;
+    width: 88px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px;
+    top: 0px;
+    left: 19px;
+    position: absolute;
+ 
+}
+.boundlabel{
+        margin-left: 69px;
+}
+.shortboundicon{
+    background: url("./images/shortboundicon.png");
+        height: 30px;
+    width: 88px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px;
+    top: 0px;
+    left: 19px;
+    position: absolute;
+}
+
+/*DRAG ZONE*/
+
+#dropZone{
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #ffffffe3;
+    display: none;
+        z-index: 1050;
+}
+
+#dropZone.over{
+    display: block;
+}
+#dropTrigger{
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+#dropMessage{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+/*EDICION EN GRUPO*/
+.midleft {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    background: #f6f6f6;
+}
+.midright {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+}
+.forceverticalscroll{
+    overflow-y: scroll;
+}
+
+#groupDocEditList,#groupImgEditList{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 35px;
+}
+#groupDocEditOptions,#groupImgEditOptions{
+    padding: 10px;
+}
+.groupDocEditRow,.groupImgEditRow {
+    width: 100%;
+    overflow: auto;
+    margin: 5px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+.groupDocEditRow>div,.groupImgEditRow>div {
+    float: left;
+    margin-left: 5px;
+        width: 30px;
+    height: 30px;
+}
+.groupDocEditRow img,.groupImgEditRow img {
+    max-height: 100%;
+    max-width: 100%;
+}
+/*grupos edicion en grupo*/
+
+.group.groupImgEdit .groupbody{
+    margin-left: 21px;
+}
+.groupedtigroupselectcheckbox{
+    float:left;
+}
+.group.groupImgEdit .grouphead{
+    width: auto;
+    margin-left: 21px;
+}
+
+/*GRUPOS interface principal*/
+.group{
+ }
+.group .grouphead{
+    display: block;
+    overflow: hidden;
+    width: fit-content;
+    color: white;
+    background: #3273ae;
+    padding: 3px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    font-size: 9px;
+    width: 100%
+}
+.group.simple .grouphead{
+    display: none;
+}
+
+.group .groupbody{
+    border: 2px solid #3273ae;
+}
+
+.group.simple .groupbody{
+    border:none;
+}
+
+.group.simple:nth-child(odd) .documentrow{
+    background: #FFF;
+}
+.group.simple:nth-child(even) .documentrow{
+    background: #f1f1f1;
+}
+
+
+
+.groupEditListToolbar .btn {
+    margin-right: 5px;
+}
+
+
+.group .groupbody .row:not(:first-child)>div.hiddenfornotfirstingroup>* {
+    display: none;
+}
+/*grupos sumario*/
+
+#summaryModalTable .group{
+        margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 10px;
+} 
+#summaryModalTable .group .summaryrow{
+        margin: 0px 1px;
+}
+
+
+#summaryModalTable .group .col-xs-1 miniceldasummary hiddenfornotfirstingroup *{
+    display: none;
+}
+
+
+.warningpages{
+    position: absolute;
+    left: 34px;
+    background: #fff700;
+    color:#000;
+    padding: 5px;
+    border: 2px solid;
+    border-radius:20px;
+}
+
+
+
+/*DRAG DOC ROW*/
+
+#docMainPanel > .documentrow.grabable { cursor: grab; user-select: none }
+#docMainPanel > .documentrow.grabbed,#docMainPanel > .group.grabbed .groupbody,#docMainPanel > .group.simple.grabbed .documentrow,#docMainPanel .group .groupbody >.documentrow.grabbed{
+     box-shadow:         inset 0 0 10px #0000008c;
+}
+
+#docMainPanel > .group.grabbed .documentrow:nth-child(even), #docMainPanel > .group.grabbed .documentrow:nth-child(odd){
+    background:none;
+}
+
+#docMainPanel > .documentrow.grabbed:active {
+  user-input: none;
+}
+#docMainPanel > .documentrow.grabbed:active * {
+  user-input: none;
+  cursor:  grabbing !important;
+}
+
+
+.documentrow .grabable,.documentrow .ingroupgrabable{
+    width: 20px;
+    float: left;
+    height: 55px;
+    background: #9a9a9a;
+    border-radius: 3px 0px 0px 3px;
+    color: #fff;
+    font-size: 19px;
+}
+
+.group .groupbody .grabable{
+    display:none;
+}
+.group .ingroupgrabable{
+    display:block
+}
+.documentrow.topdragable .ingroupgrabable, .group.simple .ingroupgrabable {
+    display: none;
+}
+.group.simple .groupbody .grabable{
+    display:block;
+}
+
+.grabable:hover,.ingroupgrabable:hover{
+    cursor:-webkit-grab;
+} 
+.topdragable.grabbed .grabable, .documentrow.grabbed .ingroupgrabable{
+        background: #3273ae;
+}
+#docMainPanel > .group.grabbed .groupbody{
+        border-color: #47a1f3;
+}
+#docMainPanel > .group.grabbed .grouphead{
+        background: #47a1f3;
+}
+
+.topdragable.grabbed .grabable:hover, documentrow.grabbed .ingroupgrabable:hover{
+    cursor:-webkit-grabbing;
+}
+
+
+
+body.noselect{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+
+#marcaroja,#marcaverde{
+    position: fixed;
+    width: 200px;
+    height:1px;
+    top:0;
+    right:0;
+    background:#f00;
+}
+#marcaverde{
+    background:#0f0;
+}
